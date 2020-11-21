@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practice vuejs</title>
+    <style>
+        [v-cloak] {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="app" v-cloak>
+        <h1>{{ message }}</h1>
+        <p v-if="message2.count > 0">
+            you have {{ message2.count }} messages.
+        </p>
+        <p v-else>
+            no message
+        </p>
+        <h2 v-show="message2.count > 0">
+            foo↑
+        </h2>
+        <h2 v-show="message2.count <= 0">
+            ok!
+        </h2>
+        <ul>
+            <li v-for="msg in message3">
+                {{ msg.name }}->{{ msg.data }}
+            </li>
+        </ul>
+        <input type="text" v-model="message4">
+        <p>{{ message4 }}</p>
+        <p>
+            neko
+            <input type="checkbox" value="neko" v-model="message5">
+        </p>
+        <p>
+            inu
+            <input type="checkbox" value="inu" v-model="message5">
+        </p>
+        <p>
+            tori
+            <input type="checkbox" value="tori" v-model="message5">
+        </p>
+        <ul v-for="m in message5">
+            <li>{{ m }}</li>
+        </ul>
+        <button v-on:click="foo">foo</button>
+        <br>
+        <input type="text" v-model="message6">
+        <p>{{ updateMessage6 }}</p>
+        <input type="text" v-model="message7">
+        <p>{{ message7_2 }}</p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <script src="./index.js"></script>
+</body>
+</html>
